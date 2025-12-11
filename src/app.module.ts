@@ -10,6 +10,11 @@ import {
   SupplierRating,
   SupplierSuggestion,
 } from './entities';
+import { EventBusModule } from './common/event-bus';
+import { MatchingModule } from './matching';
+import { RiskModule } from './risk';
+import { PurchaseRequestsModule } from './purchase-requests';
+import { SuggestionsModule } from './suggestions';
 
 @Module({
   imports: [
@@ -31,6 +36,14 @@ import {
       synchronize: process.env.NODE_ENV !== 'production', // Auto-sync schema in dev
       logging: process.env.NODE_ENV !== 'production',
     }),
+    // Global event bus for inter-module communication
+    EventBusModule,
+    // Core scoring engines
+    MatchingModule,
+    RiskModule,
+    // Feature modules
+    PurchaseRequestsModule,
+    SuggestionsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
