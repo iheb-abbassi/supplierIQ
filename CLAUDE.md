@@ -3,6 +3,9 @@
 ## Project Name
 SupplierIQ – AI Supplier Matching & Risk Scoring Microservice
 
+## Project Description
+SupplierIQ is an AI-powered NestJS microservice that analyzes historical supplier performance data to automatically recommend the best suppliers for any purchase request.
+
 ## Goal
 SupplierIQ is a NestJS microservice that:
 - Accepts purchase requests (category, description, quantity, urgency, budget, region)
